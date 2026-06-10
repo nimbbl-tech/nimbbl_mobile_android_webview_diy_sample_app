@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WebView Sample</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="load_url">Load URL</string>
+    <string name="url_hint">https://www.example.com</string>
+    <string name="invalid_url">Please enter a valid URL</string>
+    <string name="loading">Loading...</string>
+    <string name="network_wifi">Wi-Fi</string>
+    <string name="network_mobile">Mobile Data</string>
+    <string name="network_none">No Network</string>
+    <string name="network_unknown">Unknown Network</string>
+</resources>

@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-mergeDebugResources-32:/layout/activity_webview.xml",
+        "source": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-main-35:/layout/activity_webview.xml"
+    },
+    {
+        "merged": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-mergeDebugResources-32:/layout/dynamic_url_field.xml",
+        "source": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-main-35:/layout/dynamic_url_field.xml"
+    },
+    {
+        "merged": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-mergeDebugResources-32:/layout/activity_webview_dynamic.xml",
+        "source": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-main-35:/layout/activity_webview_dynamic.xml"
+    },
+    {
+        "merged": "com.example.webviewsample.app-mergeDebugResources-32:/layout/activity_webview.xml",
+        "source": "com.example.webviewsample.app-main-35:/layout/activity_webview.xml"
+    },
+    {
+        "merged": "com.example.webviewsample.app-mergeDebugResources-32:/layout/activity_home.xml",
+        "source": "com.example.webviewsample.app-main-35:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-mergeDebugResources-32:/layout/activity_home.xml",
+        "source": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-main-35:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-mergeDebugResources-32:/layout/webview_item.xml",
+        "source": "/Users/sandeepyadav/.gradle/daemon/8.2/com.example.webviewsample.app-main-35:/layout/webview_item.xml"
+    }
+]
