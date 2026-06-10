@@ -1,0 +1,33 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Build directories
+build/
+app/build/
+
+# Gradle
+.gradle/
+gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+local.properties
+
+# Android Studio / IntelliJ IDEA
+*.iml
+.idea/
+*.DS_Store
+captures/
+
+# Kotlin
+*.class
+
+# Proguard
+proguard/
+
+# Signing configs (never commit keystores)
+*.jks
+*.keystore
+release/
