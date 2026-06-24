@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Message
 import android.util.Log
 import android.view.View
 import android.webkit.WebChromeClient
@@ -78,6 +79,9 @@ class WebViewActivity : AppCompatActivity() {
             builtInZoomControls = true
             displayZoomControls = false
             mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+            // Required for payment popups (3DS, net banking redirects, etc.)
+            setSupportMultipleWindows(true)
+            javaScriptCanOpenWindowsAutomatically = true
         }
 
         webView.webViewClient = object : WebViewClient() {
@@ -114,6 +118,28 @@ class WebViewActivity : AppCompatActivity() {
         webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 progressBar.visibility = if (newProgress < 100) View.VISIBLE else View.GONE
+            }
+
+            // Handle window.open() calls from the checkout (3DS auth, payment gateway pages)
+            override fun onCreateWindow(
+                view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?
+            ): Boolean {
+                val popupWebView = WebView(this@WebViewActivity)
+                popupWebView.settings.javaScriptEnabled = true
+                popupWebView.webViewClient = object : WebViewClient() {
+                    override fun shouldOverrideUrlLoading(popupView: WebView?, request: WebResourceRequest?): Boolean {
+                        val url = request?.url?.toString() ?: return false
+                        Log.d(TAG, "Popup navigating to: $url")
+                        if (handleUrl(url)) return true
+                        // Load payment redirect URLs in the main WebView
+                        webView.loadUrl(url)
+                        return true
+                    }
+                }
+                val transport = resultMsg?.obj as? WebView.WebViewTransport
+                transport?.webView = popupWebView
+                resultMsg?.sendToTarget()
+                return true
             }
         }
     }
